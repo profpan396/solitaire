@@ -2,19 +2,26 @@ import Card from './Card.js';
 class Deck {
     constructor() {
         this.cards = [];
-        this.build(); 
+        this.buildDeck(); 
     }
-    build() {
+    buildDeck() {
         Deck.suits.forEach((suit) => Deck.ranks.forEach((rank) => this.cards.push(new Card(suit, rank, Deck.valuesTable))));
     }
     deal() {
         return this.cards.pop();
     }
     shuffle() {
-        
+        this.cards.forEach((_, i) => {
+            //Pick random index from cards array
+            let j = Math.floor(Math.random() * this.cards.length)
+            let temp = this.cards[i];
+            this.cards[i] = this.cards[j];
+            this.cards[j] = temp;
+        });
     }
 }
 
+// Add constants to deck prototype
 Deck.suits = ['H','D','S','C'];
 Deck.ranks = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King'];
 Deck.valuesTable = {
@@ -36,4 +43,17 @@ Deck.valuesTable = {
 const deck = new Deck();
 
 console.log(Deck.suits);
+console.log(Deck.ranks);
+console.log(Deck.valuesTable);
 console.log(deck);
+
+console.log(deck.cards[0]);
+deck.cards[0].flip();
+console.log(deck.cards[0]);
+
+deck.cards[0].flip();
+console.log(deck.cards[0]);
+
+deck.shuffle();
+console.log(deck);
+

@@ -5,4 +5,7 @@ export default class Card {
         this.value = valuesTable[rank];
         this.revealed = false;
     }
+    flip() {
+       this.revealed = !this.revealed;
+    }
 }
