@@ -3,9 +3,9 @@ export default class Card {
         this.suit = suit;
         this.rank = rank;
         this.value = valuesTable[rank];
-        this.revealed = false;
+        this.faceup = false;
     }
     flip() {
-       this.revealed = !this.revealed;
+       this.faceup = !this.faceup;
     }
 }
