@@ -11,13 +11,13 @@ class Deck {
         return this.cards.pop();
     }
     shuffle() {
-        this.cards.forEach((_, i) => {
+        this.cards.forEach((_, idx) => {
             //Pick random index from cards array
             let randIdx = Math.floor(Math.random() * this.cards.length)
             //Hold current card
-            let currentCard = this.cards[i];
+            let currentCard = this.cards[idx];
             //Replace card at index i with random card from index j
-            this.cards[i] = this.cards[randIdx];
+            this.cards[idx] = this.cards[randIdx];
             //Replace random card with current card
             this.cards[randIdx] = currentCard;
         });
