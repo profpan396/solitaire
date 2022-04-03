@@ -16,9 +16,10 @@ console.log(deck);
 render();
 
 function render() {
-    deck.cards.forEach((card) => {
+    deck.cards.forEach((card, idx) => {
     let cardEl = document.createElement('div');
-    cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`);
+    if (idx % 2 === 0) card.flip();
+    card.faceup ? cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`) : cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} back-blue`);
     mainEl.append(cardEl);
     });
 }

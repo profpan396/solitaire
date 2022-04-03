@@ -9,19 +9,15 @@ export default class Deck {
     }
     shuffle() {
         this.cards.forEach((_, idx) => {
-            //Pick random index from cards array
-            let randIdx = Math.floor(Math.random() * this.cards.length)
-            //Hold current card
-            let currentCard = this.cards[idx];
-            //Replace card at index i with random card from index j
-            this.cards[idx] = this.cards[randIdx];
-            //Replace random card with current card
-            this.cards[randIdx] = currentCard;
+            let randIdx = Math.floor(Math.random() * this.cards.length) //Pick random index from cards array
+            let currentCard = this.cards[idx]; //Hold current card
+            this.cards[idx] = this.cards[randIdx]; //Replace card at idx with random card pulled at randIdx
+            this.cards[randIdx] = currentCard; //Replace random card with current card
         });
     }
 }
 
-// Add constants to deck prototype
+// Add constants to Deck prototype
 Deck.suits = ['h','d','s','c'];
 Deck.ranks = ['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king'];
 Deck.valuesTable = {
