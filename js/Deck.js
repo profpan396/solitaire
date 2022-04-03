@@ -25,19 +25,19 @@ export default class Deck {
 Deck.suits = ['h','d','s','c'];
 Deck.ranks = ['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king'];
 Deck.valuesTable = {
-    ace: 1,
-    two: 2,
-    three: 3,
-    four: 4,
-    five: 5,
-    six: 6,
-    seven: 7,
-    eight: 8,
-    nine: 9,
-    ten: 10,
-    jack: 11,
-    queen: 12,
-    king: 13
+    ace: {value: 1, shorthand: 'A'}, 
+    two: {value: 2, shorthand: '02'},
+    three: {value: 3, shorthand: '03'},
+    four: {value: 4, shorthand: '04'},
+    five: {value: 5, shorthand: '05'},
+    six: {value: 6, shorthand: '06'},
+    seven: {value: 7, shorthand: '07'},
+    eight: {value: 8, shorthand: '08'},
+    nine: {value: 9, shorthand: '09'},
+    ten: {value: 10, shorthand: '10'},
+    jack: {value: 11, shorthand: 'J'},
+    queen: {value: 12, shorthand: 'Q'},
+    king: {value: 13, shorthand: 'K'},
 };
 
 
