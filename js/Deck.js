@@ -1,10 +1,10 @@
 import Card from './Card.js';
-class Deck {
+export default class Deck {
     constructor() {
         this.cards = [];
         Deck.suits.forEach((suit) => Deck.ranks.forEach((rank) => this.cards.push(new Card(suit, rank, Deck.valuesTable))));
     }
-    deal() {
+    dealOne() {
         return this.cards.pop();
     }
     shuffle() {
@@ -40,21 +40,18 @@ Deck.valuesTable = {
     king: 13
 };
 
-const deck = new Deck();
-
-
 console.log(Deck.suits);
 console.log(Deck.ranks);
 console.log(Deck.valuesTable);
+
+const deck = new Deck();
 console.log(deck);
-
-console.log(deck.cards[0]);
-deck.cards[0].flip();
-console.log(deck.cards[0]);
-
-deck.cards[0].flip();
-console.log(deck.cards[0]);
 
 deck.shuffle();
 console.log(deck);
+
+console.log(deck.dealOne);
+console.log(deck.dealOne());
+
+
 
