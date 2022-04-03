@@ -40,18 +40,4 @@ Deck.valuesTable = {
     king: 13
 };
 
-console.log(Deck.suits);
-console.log(Deck.ranks);
-console.log(Deck.valuesTable);
-
-const deck = new Deck();
-console.log(deck);
-
-deck.shuffle();
-console.log(deck);
-
-console.log(deck.dealOne);
-console.log(deck.dealOne());
-
-
 

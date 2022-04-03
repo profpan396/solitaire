@@ -1,5 +1,4 @@
-import Deck from './Deck.js';
-class Tableau {
+export default class Tableau {
     constructor(columns) {
         for (let i = 0; i < columns; i++) {
             this[i] = [];
@@ -18,9 +17,3 @@ class Tableau {
         });
     }
 }
-
-const tableau = new Tableau(7);
-console.log(tableau);
-
-console.log(tableau.setTableau(new Deck()));
-console.log(tableau);
