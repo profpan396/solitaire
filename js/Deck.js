@@ -2,9 +2,6 @@ import Card from './Card.js';
 class Deck {
     constructor() {
         this.cards = [];
-        this.buildDeck(); 
-    }
-    buildDeck() {
         Deck.suits.forEach((suit) => Deck.ranks.forEach((rank) => this.cards.push(new Card(suit, rank, Deck.valuesTable))));
     }
     deal() {
@@ -25,25 +22,26 @@ class Deck {
 }
 
 // Add constants to deck prototype
-Deck.suits = ['H','D','S','C'];
-Deck.ranks = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King'];
+Deck.suits = ['h','d','s','c'];
+Deck.ranks = ['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king'];
 Deck.valuesTable = {
-    Ace: 1,
-    Two: 2,
-    Three: 3,
-    Four: 4,
-    Five: 5,
-    Six: 6,
-    Seven: 7,
-    Eight: 8,
-    Nine: 9,
-    Ten: 10,
-    Jack: 11,
-    Queen: 12,
-    King: 13
+    ace: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
+    jack: 11,
+    queen: 12,
+    king: 13
 };
 
 const deck = new Deck();
+
 
 console.log(Deck.suits);
 console.log(Deck.ranks);
