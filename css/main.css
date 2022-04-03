@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #2D8C44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#solitaire-board {
+    width: 80%;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(0,0,0,0.3);
+}
