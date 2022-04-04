@@ -1,7 +1,7 @@
 export default class Solitaire {
-    constructor(hand, foundation, tableau) {
+    constructor(hand, waste, foundation, tableau) {
         this.hand = hand;
-        this.waste = {};
+        this.waste = waste;
         this.foundation = foundation;
         this.tableau = tableau;
     }
