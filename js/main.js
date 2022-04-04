@@ -5,6 +5,7 @@ import Solitaire from './Solitaire.js';
 
 const mainEl = document.querySelector('main');
 const tableauColumns = [...document.querySelectorAll('.column')];
+const handEl = document.querySelector('#hand');
 console.log(mainEl);
 console.log(tableauColumns);
 
@@ -23,10 +24,10 @@ renderDeck()
 renderTableau();
 
 function renderDeck() {
-    deck.cards.forEach((card, idx) => {
+    solitaire.hand.cards.forEach((card, idx) => {
     let cardEl = document.createElement('div');
-    cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand}` : `card ${card.suit}${card.shorthand} back-blue`);
-    mainEl.append(cardEl);
+    cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow deck` : `card ${card.suit}${card.shorthand} back-blue shadow deck`);
+    handEl.append(cardEl);
     });
 }
 
@@ -34,24 +35,9 @@ function renderTableau() {
     tableauColumns.forEach((tableauColumn) => {
         solitaire.tableau[tableauColumn.id].forEach((card) => {
             let cardEl = document.createElement('div')
-            cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand}` : `card ${card.suit}${card.shorthand} back-blue`);
+            cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card ${card.suit}${card.shorthand} shadow back-blue`);
             tableauColumn.append(cardEl);
         });
     });
     console.log(solitaire.tableau);
 }
-// deck.shuffle();
-// console.log(deck);
-
-// console.log(deck.dealOne);
-// // console.log(deck.dealOne());
-
-
-
-// const tableau = new Tableau(7);
-// console.log(tableau);
-
-// console.log(tableau.setTableau(deck));
-// console.log(tableau);
-
-// console.log(deck);

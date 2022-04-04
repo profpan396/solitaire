@@ -11,7 +11,7 @@ body {
 }
 
 #solitaire-board {
-    width: 80%;
+    width: 60%;
 }
 
 #status-bar {
@@ -21,10 +21,39 @@ body {
 }
 
 .top-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 1rem 0;
+}
+
+#foundation {
+    grid-column: 1 / 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#waste {
+    grid-column: 6 / 7;
+}
+
+#hand {
+    grid-column: 7 / 8;
+    position: relative;
 }
 
 #tableau {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+}
+
+.deck {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 764px) {
+    #solitaire-board {
+        width: 100%;
+    }
 }
