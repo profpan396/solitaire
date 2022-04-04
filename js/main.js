@@ -34,7 +34,7 @@ function renderDeck() {
 function renderTableau() {
     tableauColumns.forEach((tableauColumn) => {
         solitaire.tableau[tableauColumn.id].forEach((card) => {
-            let cardEl = document.createElement('div')
+            let cardEl = document.createElement('div');
             cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card shadow back-blue`);
             tableauColumn.append(cardEl);
         });
