@@ -1,4 +1,4 @@
-class Waste {
+export default class Waste {
     constructor() {
     
     }
