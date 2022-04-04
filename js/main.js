@@ -20,12 +20,6 @@ const waste = new CardPile();
 const deck = new Deck();
 deck.shuffle();
 
-console.log(Deck.suits);
-console.log(Deck.ranks);
-console.log(Deck.valuesTable);
-
-
-
 const solitaire = new Solitaire(deck, waste, foundation, tableau);
 solitaire.tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
 console.log(solitaire);

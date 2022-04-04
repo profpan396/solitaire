@@ -5,4 +5,7 @@ export default class CardPile {
     grabTopCard() {
         return this.cards.pop();
     }
+    addCardToPile(card) {
+        this.cards.push(card);
+    }
 }
