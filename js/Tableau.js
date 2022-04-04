@@ -1,5 +1,5 @@
 export default class Tableau {
-    constructor(columns) {
+    constructor() {
         for (let i = 0; i < 7; i++) {
             this[i] = [];
         }
