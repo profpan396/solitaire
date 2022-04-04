@@ -20,6 +20,10 @@ body {
     background-color: rgba(0,0,0,0.3);
 }
 
+.top-row {
+    display: flex;
+}
+
 #tableau {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
