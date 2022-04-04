@@ -1,27 +1,45 @@
 import Deck from './Deck.js';
 import Tableau from './Tableau.js';
+import Foundation from './Foundation.js';
+import Solitaire from './Solitaire.js';
 
 const mainEl = document.querySelector('main');
+const tableauColumns = [...document.querySelectorAll('.column')];
 console.log(mainEl);
+console.log(tableauColumns);
 
 console.log(Deck.suits);
 console.log(Deck.ranks);
 console.log(Deck.valuesTable);
 
 const deck = new Deck();
-console.log(deck);
 deck.shuffle();
-console.log(deck);
 
-render();
+const solitaire = new Solitaire(deck, new Foundation(), new Tableau());
+solitaire.tableau.setTableau(solitaire.hand);
+console.log(solitaire);
 
-function render() {
+renderDeck()
+renderTableau();
+
+function renderDeck() {
     deck.cards.forEach((card, idx) => {
     let cardEl = document.createElement('div');
-    if (idx % 2 === 0) card.flip();
+    card.flip();
     card.faceup ? cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`) : cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} back-blue`);
     mainEl.append(cardEl);
     });
+}
+
+function renderTableau() {
+    tableauColumns.forEach((tableauColumn) => {
+        solitaire.tableau[tableauColumn.id].forEach((card) => {
+            let cardEl = document.createElement('div')
+            cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`);
+            tableauColumn.append(cardEl);
+        });
+    });
+    console.log(solitaire.tableau);
 }
 // deck.shuffle();
 // console.log(deck);

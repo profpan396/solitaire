@@ -1,4 +1,5 @@
 import Card from './Card.js';
+
 export default class Deck {
     constructor() {
         this.cards = [];

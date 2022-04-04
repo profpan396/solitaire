@@ -1,6 +1,6 @@
 export default class Tableau {
     constructor(columns) {
-        for (let i = 0; i < columns; i++) {
+        for (let i = 0; i < 7; i++) {
             this[i] = [];
         }
     }
@@ -9,9 +9,7 @@ export default class Tableau {
     }
     setTableau(deck) {
         Object.keys(this).forEach((pileKey) => {
-            let cardsToDeal = parseInt(pileKey) + 1;
-            console.log(cardsToDeal);
-            for (let i = 0; i < cardsToDeal; i++) {
+            for (let i = 0; i < parseInt(pileKey) + 1; i++) {
                 this[pileKey].push(deck.dealOne());
             }
         });

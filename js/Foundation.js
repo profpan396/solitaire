@@ -1,4 +1,4 @@
-class Foundation {
+export default class Foundation {
     constructor() {
         this.h = [];
         this.d = [];
