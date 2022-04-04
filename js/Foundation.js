@@ -1,9 +1,10 @@
 export default class Foundation {
-    constructor() {
-        this.h = [];
-        this.d = [];
-        this.s = [];
-        this.c = [];
+    constructor(...cardPiles) {
+        console.log(cardPiles);
+        this.h = cardPiles[0];
+        this.d = cardPiles[1];
+        this.s = cardPiles[2];
+        this.c = cardPiles[3];
     }
     removeCardFromFoundation(card) {
         this[card.suit].pop();
