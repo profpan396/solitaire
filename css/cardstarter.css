@@ -23,7 +23,7 @@
   white-space: nowrap;
   overflow: hidden;
   /* Default sizes for cards (size based off the font). */
-  /* Optional styles for cards: borderless and drop shadow. */
+  /* Optional styles for cards: border-less and drop shadow. */
   /* Not a card, but a card-shaped outline to represent a
      droppable place, like an empty pile. */ }
   .card.small {
