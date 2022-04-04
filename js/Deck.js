@@ -1,12 +1,13 @@
 import Card from './Card.js';
+import CardPile from './CardPile.js';
 
-export default class Deck {
+export default class Deck extends CardPile{
     constructor() {
-        this.cards = [];
+        super();
         Deck.suits.forEach((suit) => Deck.ranks.forEach((rank) => this.cards.push(new Card(suit, rank, Deck.valuesTable))));
     }
     dealOne() {
-        return this.cards.pop();
+        return super.grabTopCard();
     }
     shuffle() {
         this.cards.forEach((_, idx) => {
