@@ -25,8 +25,7 @@ renderTableau();
 function renderDeck() {
     deck.cards.forEach((card, idx) => {
     let cardEl = document.createElement('div');
-    card.flip();
-    card.faceup ? cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`) : cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} back-blue`);
+    cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand}` : `card ${card.suit}${card.shorthand} back-blue`);
     mainEl.append(cardEl);
     });
 }
@@ -35,7 +34,7 @@ function renderTableau() {
     tableauColumns.forEach((tableauColumn) => {
         solitaire.tableau[tableauColumn.id].forEach((card) => {
             let cardEl = document.createElement('div')
-            cardEl.setAttribute('class', `card ${card.suit}${card.shorthand}`);
+            cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand}` : `card ${card.suit}${card.shorthand} back-blue`);
             tableauColumn.append(cardEl);
         });
     });
