@@ -5,32 +5,52 @@
 // import Foundation from './Foundation.js';
 // import Solitaire from './Solitaire.js';
 
+/*----- constants -----*/
+
+
+
+/*----- app's state (variables) -----*/
+let solitaire, deck, waste, foundation, tableau, moves, gameWon;
+
+
+
+/*----- cached element references -----*/
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
 const wasteEl = document.querySelector('#waste');
 console.log(tableauColumns);
+/*----- event listeners -----*/
 
-const foundationPiles = Array(4).fill(null).map(_ => new CardPile());
-const foundation = new Foundation(...foundationPiles);
 
-const tableauPiles = Array(7).fill(null).map(_ => new TableauPile())
-const tableau = new Tableau(...tableauPiles);
 
-const waste = new CardPile();
+/*----- functions -----*/
+init();
 
-const deck = new Deck();
-console.log(deck);
-deck.shuffle();
-console.log(deck);
+function init() {
+    moves = 0;
+    gameWon = false;
 
-const solitaire = new Solitaire(deck, waste, foundation, tableau);
-console.log(solitaire);
-solitaire.tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
-console.log(solitaire);
+    deck = new Deck();
+    console.log(JSON.parse(JSON.stringify(deck)));
+    deck.shuffle();
+    console.log(JSON.parse(JSON.stringify(deck)));
+    waste = new CardPile();
+    foundation = new Foundation(...Array(4).fill(null).map(_ => new CardPile()));
+    tableau = new Tableau(...Array(7).fill(null).map(_ => new TableauPile()));
 
-renderDeck();
-renderTableau();
-renderWaste();
+    solitaire = new Solitaire(deck, waste, foundation, tableau);
+    console.log(solitaire);
+    solitaire.tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
+    console.log(solitaire);
+    console.log(JSON.parse(JSON.stringify(deck)));
+    render();
+}
+
+function render() {
+    renderDeck();
+    renderTableau();
+    renderWaste();
+}
 
 function renderDeck() {
     solitaire.hand.cards.forEach((card) => {
