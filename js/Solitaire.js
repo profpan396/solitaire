@@ -6,16 +6,15 @@ class Solitaire {
         this.tableau = tableau;
         this.cardsToDraw = -3;
     }
-    resetHand() {
+    resetHand() { //Modify code to be a more succinct
         this.waste.cards.reverse();
         this.waste.cards.forEach((card, idx) => {
-            console.log(`${idx} - Card: ${card}`);
             if(card.faceup) card.flip();
             this.hand.addCardToPile(card);
         });
         this.waste.cards = [];
     }
-    draw() {
+    pullFromHand() {
         this.hand.grabCardsFromPosition(this.cardsToDraw).forEach((card, idx) => {
             console.log(`${idx} - Card: ${card}`);
             card.flip();
