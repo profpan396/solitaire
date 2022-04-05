@@ -1,7 +1,7 @@
-import Card from './Card.js';
-import CardPile from './CardPile.js';
+// import Card from './Card.js';
+// import CardPile from './CardPile.js';
 
-export default class Deck extends CardPile{
+class Deck extends CardPile{
     constructor() {
         super();
         Deck.suits.forEach((suit) => Deck.ranks.forEach((rank) => this.cards.push(new Card(suit, rank, Deck.valuesTable))));

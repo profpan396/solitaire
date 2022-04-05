@@ -1,4 +1,4 @@
-export default class Solitaire {
+class Solitaire {
     constructor(hand, waste, foundation, tableau) {
         this.hand = hand;
         this.waste = waste;

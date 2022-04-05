@@ -1,4 +1,4 @@
-export default class Foundation {
+class Foundation {
     constructor(...cardPiles) {
         this.h = cardPiles[0];
         this.d = cardPiles[1];

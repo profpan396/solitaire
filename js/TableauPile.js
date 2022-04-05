@@ -1,6 +1,6 @@
-import CardPile from './CardPile.js';
+// import CardPile from './CardPile.js';
 
-export default class TableauPile extends CardPile {
+class TableauPile extends CardPile {
     constructor(){
         super();
     }

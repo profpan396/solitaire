@@ -1,4 +1,4 @@
-export default class CardPile {
+class CardPile {
     constructor() {
         this.cards = [];
     }

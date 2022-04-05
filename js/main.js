@@ -1,9 +1,9 @@
-import CardPile from './CardPile.js';
-import TableauPile from './TableauPile.js';
-import Deck from './Deck.js';
-import Tableau from './Tableau.js';
-import Foundation from './Foundation.js';
-import Solitaire from './Solitaire.js';
+// import CardPile from './CardPile.js';
+// import TableauPile from './TableauPile.js';
+// import Deck from './Deck.js';
+// import Tableau from './Tableau.js';
+// import Foundation from './Foundation.js';
+// import Solitaire from './Solitaire.js';
 
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');

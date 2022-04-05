@@ -1,4 +1,4 @@
-export default class Card {
+class Card {
     constructor(suit, rank, valuesTable) {
         this.suit = suit;
         this.rank = rank;

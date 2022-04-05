@@ -1,4 +1,4 @@
-export default class Tableau {
+class Tableau {
     constructor(...tableauPiles) {
         tableauPiles.forEach((tableauPile, i) => this[i] = tableauPile);
     }
