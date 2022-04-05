@@ -15,7 +15,7 @@ class Solitaire {
         this.waste.cards = [];
     }
     pullFromHand() {
-        this.hand.grabCardsFromPosition(this.cardsToDraw).forEach((card, idx) => {
+        this.hand.drawFromDeck(this.cardsToDraw).forEach((card, idx) => {
             console.log(`${idx} - Card: ${card}`);
             card.flip();
             this.waste.addCardToPile(card);
