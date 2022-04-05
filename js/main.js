@@ -17,7 +17,9 @@ let solitaire, deck, waste, foundation, tableau, moves, gameWon;
 /*----- cached element references -----*/
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
-const wasteEl = document.querySelector('#waste');
+const wasteContainer = document.querySelector('.waste-container');
+const wasteAnchor = wasteContainer.querySelector('#waste-anchor');
+const wasteExtend = wasteContainer.querySelector('#waste-extend');
 console.log(tableauColumns);
 /*----- event listeners -----*/
 
@@ -31,18 +33,15 @@ function init() {
     gameWon = false;
 
     deck = new Deck();
-    console.log(JSON.parse(JSON.stringify(deck)));
     deck.shuffle();
-    console.log(JSON.parse(JSON.stringify(deck)));
+
     waste = new CardPile();
     foundation = new Foundation(...Array(4).fill(null).map(_ => new CardPile()));
     tableau = new Tableau(...Array(7).fill(null).map(_ => new TableauPile()));
 
     solitaire = new Solitaire(deck, waste, foundation, tableau);
-    console.log(solitaire);
-    solitaire.tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
-    console.log(solitaire);
-    console.log(JSON.parse(JSON.stringify(deck)));
+    tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
+
     render();
 }
 
@@ -54,7 +53,7 @@ function render() {
 
 function renderDeck() {
     handEl.innerHTML = '';
-    solitaire.hand.cards.forEach((card) => {
+    hand.cards.forEach((card) => {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow deck` : `card back-blue shadow deck`);
         handEl.append(cardEl);
@@ -64,20 +63,19 @@ function renderDeck() {
 function renderTableau() {
     tableauColumns.forEach((tableauColumn, idx) => {
         tableauColumn.innerHTML = '';
-        solitaire.tableau[idx].cards.forEach((card) => {
+        tableau[idx].cards.forEach((card) => {
             let cardEl = document.createElement('div');
             cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card back-blue shadow`);
             tableauColumn.append(cardEl);
         });
     });
-    console.log(solitaire.tableau);
 }
 
 function renderWaste() {
-    wasteEl.innerHTML = '';
-    solitaire.waste.cards.forEach((card) => {
+    wasteContainer.childNodes.forEach((node) => node.innerHTML = '');
+    waste.cards.slice(-3).forEach((card, idx) => {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card back-blue shadow`);
-        wasteEl.append(cardEl);
+        idx === 0 ? wasteAnchor.append(cardEl) : wasteExtend.append(cardEl);
     });
 }
