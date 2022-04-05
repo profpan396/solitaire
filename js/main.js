@@ -53,6 +53,7 @@ function render() {
 }
 
 function renderDeck() {
+    handEl.innerHTML = '';
     solitaire.hand.cards.forEach((card) => {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow deck` : `card back-blue shadow deck`);
