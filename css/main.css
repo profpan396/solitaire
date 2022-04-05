@@ -43,7 +43,19 @@ body {
 
 #waste {
     grid-column: 6 / 7;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
 }
+
+#waste .card {
+    position: relative;
+}
+
+#waste .card:not(:first-child) {
+    margin-left: -100px;
+}
+
 
 #hand {
     grid-column: 7 / 8;
