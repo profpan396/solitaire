@@ -9,8 +9,8 @@ class Deck extends CardPile{
     dealOne() {
         return super.grabTopCard();
     }
-    grabCardsFromPosition(n) {
-        return this.cards.splice(n, this.cards.length);
+    drawFromDeck(n) {
+        return this.cards.splice(n, this.cards.length).reverse();
     }
     shuffle() {
         this.cards.forEach((_, idx) => {
