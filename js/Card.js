@@ -10,9 +10,9 @@ class Card {
        this.faceup = !this.faceup;
     }
     isRed() {
-        return this.card.suit === 'h' || this.card.suit === 'd';
+        return this.suit === 'h' || this.suit === 'd';
     }
     isBlack() {
-        return this.card.suit === 's' || this.card.suit === 'c';
+        return this.suit === 's' || this.suit === 'c';
     }
 }
