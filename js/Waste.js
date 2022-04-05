@@ -1,5 +1,5 @@
-class Waste {
+class Waste extends CardPile {
     constructor() {
-    
+        super();
     }
 }
