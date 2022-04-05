@@ -9,6 +9,9 @@ class Deck extends CardPile{
     dealOne() {
         return super.grabTopCard();
     }
+    grabCardsFromPosition(n) {
+        return this.cards.splice(n, this.cards.length);
+    }
     shuffle() {
         this.cards.forEach((_, idx) => {
             let randIdx = Math.floor(Math.random() * this.cards.length) //Pick random index from cards array
