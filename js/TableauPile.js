@@ -4,7 +4,7 @@ class TableauPile extends CardPile {
     constructor(){
         super();
     }
-    grabCardsFromPosition() {
-        return this.cards.splice(n, this[pile].length - 1);
+    grabCardsFromPosition(n) {
+        return this.cards.splice(n, this.cards.length);
     }
 }
