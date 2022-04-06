@@ -15,6 +15,7 @@ let solitaire, deck, waste, foundation, tableau, moves, gameWon;
 
 
 /*----- cached element references -----*/
+const foundationEls = [...document.querySelectorAll('#foundation > div')];
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
 const wasteContainer = document.querySelector('.waste-container');
@@ -34,7 +35,6 @@ function init() {
 
     deck = new Deck();
     deck.shuffle();
-
     waste = new CardPile();
     foundation = new Foundation(...Array(4).fill(null).map(_ => new CardPile()));
     tableau = new Tableau(...Array(7).fill(null).map(_ => new TableauPile()));
@@ -49,11 +49,12 @@ function render() {
     renderDeck();
     renderTableau();
     renderWaste();
+    renderFoundation();
 }
 
 function renderDeck() {
     handEl.innerHTML = '';
-    hand.cards.forEach((card) => {
+    solitaire.hand.cards.forEach((card) => {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow deck` : `card back-blue shadow deck`);
         handEl.append(cardEl);
@@ -77,5 +78,15 @@ function renderWaste() {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card back-blue shadow`);
         idx === 0 ? wasteAnchor.append(cardEl) : wasteExtend.append(cardEl);
+    });
+}
+
+function renderFoundation() {
+    foundationEls.forEach((pile) => {
+            let card = foundation[pile.id].cards.slice(-1)[0];
+            if (!card) return;
+            let cardEl = document.createElement('div');
+            cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} shadow`);
+            pile.append(cardEl);
     });
 }
