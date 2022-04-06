@@ -14,6 +14,15 @@ body {
     align-items: center;
 }
 
+#foundation > div {
+    position: relative;
+}
+
+#foundation > div > div {
+    position: absolute;
+    left: 0;
+}
+
 #solitaire-board {
     width: 60%;
     height: 100%;
@@ -41,18 +50,31 @@ body {
     justify-self: center;
 }
 
-#waste {
-    grid-column: 6 / 7;
+.waste-container {
+    grid-column: 5 / 7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#waste-anchor {
+    grid-column: 2 / 3;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
+    justify-content: center;
 }
 
-#waste .card {
-    position: relative;
+#waste-extend {
+    grid-column: 1 / 2;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-#waste .card:not(:first-child) {
+#waste-extend .card {
+    position: relative;
+    margin-left: -20px;
+}
+
+#waste-extend .card:not(:first-child) {
     margin-left: -100px;
 }
 
