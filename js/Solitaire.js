@@ -8,7 +8,7 @@ class Solitaire {
     }
     resetHand() { //Modify code to be a more succinct
         this.waste.cards.reverse();
-        this.waste.cards.forEach((card, idx) => {
+        this.waste.cards.forEach((card) => {
             if(card.faceup) card.flip();
             this.hand.addCardToPile(card);
         });
@@ -16,9 +16,19 @@ class Solitaire {
     }
     pullFromHand() {
         this.hand.drawFromDeck(this.cardsToDraw).forEach((card, idx) => {
-            console.log(`${idx} - Card: ${card}`);
+            console.log(card);
             card.flip();
             this.waste.addCardToPile(card);
+        });
+    }
+    checkLegalMove(card) {
+        console.log(Object.keys(this.tableau));
+        console.log(Object.keys(this.foundation));
+        Object.keys(this.foundation).forEach((fKey) => {
+            console.log(this.foundation[fKey]);
+        });
+        Object.keys(this.tableau).forEach((tKey) => {
+            console.log(this.tableau[tKey]);
         });
     }
 }
