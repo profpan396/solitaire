@@ -17,16 +17,12 @@ class Tableau {
     cardIsLessThan(cardOne, cardTwo) {
         return cardOne.value === cardTwo.value -1;
     }
-    isPlaceable(card) {
+    isPlaceableTableau(card) {
+        let isPlaceable = false;
         Object.keys(this).forEach((tKey) => {
-            console.log(this[tKey]);
-            console.log(card);
-            console.log(this[tKey].cards.slice(-1)[0]);
-            console.log(`Opposite Color: ${this.cardIsOpposite(card, this[tKey].cards.slice(-1)[0])}`);
-            console.log(`Less Than Pile: ${this.cardIsLessThan(card, this[tKey].cards.slice(-1)[0])}`);
-            console.log(`Placeable: ${this.cardIsOpposite(card, this[tKey].cards.slice(-1)[0]) && this.cardIsLessThan(card, this[tKey].cards.slice(-1)[0])}`)
-            // console.log(this[tKey].cards.slice(-1)[0].value === card.value + 1 && this[tKey].cards.slice(-1)[0]);
+            let cardTwo = this[tKey].cards.slice(-1)[0];
+            if ((this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) === true) isPlaceable = true;
         });
-        // return this[card.suit].cards.length === 0 ? card.value === 1 : card.value === this[card.suit].cards.slice(-1)[0].value + 1;
+        return isPlaceable;
     }
 }
