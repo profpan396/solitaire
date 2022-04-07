@@ -107,6 +107,6 @@ function handleClick(evt) {
         if (solitaire.hand.cards.length > 0) solitaire.pullFromHand();
         else solitaire.resetHand();
     }
-    else if (evt.target.parentElement.id === 'waste-extend' || evt.target.parentElement.id === 'waste-anchor') solitaire.moveCard('waste');
+    else if (evt.target.parentElement.id === 'waste') solitaire.moveCard('waste');
     render();
 }

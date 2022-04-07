@@ -87,6 +87,10 @@ body {
     margin-right: -30px;
 }
 
+#waste .card:not(:last-child) {
+    pointer-events: none;
+}
+
 
 #hand {
     grid-column: 7 / 8;
