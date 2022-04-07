@@ -28,11 +28,11 @@ class Solitaire {
             isPlaceableTableau = this.tableau.isPlaceableTableau(this[section][key].cards[cardPos]);
             if (isPlaceableFoundation) {
                 this.foundation.addCardToFoundation(this[section][key].grabTopCard());
-                if (this.tableau[key].cards.length !== 0) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
+                if (this.tableau[key].cards.length !== 0 && !this.tableau[key].cards.slice(-1)[0].faceup) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
             }
             else if (isPlaceableTableau) {
                 this.tableau[isPlaceableTableau].addCardsToPile(this[section][key].grabCardsFromPosition(cardPos));
-                if (this.tableau[key].cards.length !== 0) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
+                if (this.tableau[key].cards.length !== 0 && !this.tableau[key].cards.slice(-1)[0].faceup) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
             }
         } else if (section === 'waste') {
             isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section].cards.slice(-1)[0]);
