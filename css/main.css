@@ -13,6 +13,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+#foundation .card.outline, #tableau .back-blue{
+    pointer-events: none;
+}
 
 #foundation>div {
     position: relative;
@@ -89,10 +92,6 @@ body {
     height: 100%;
     grid-template-columns: repeat(7, 1fr);
     position: relative;
-}
-
-#tableau .back-blue {
-    pointer-events: none;
 }
 
 .column {
