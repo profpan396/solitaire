@@ -37,6 +37,10 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+#status-bar #new-deal{
+    cursor: pointer;
+}
+
 .top-row {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -115,7 +119,7 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-    #solitaire-board {
+    #solitaire {
         width: 100%;
     }
 
