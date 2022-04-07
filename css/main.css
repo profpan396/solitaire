@@ -57,10 +57,12 @@ body {
     justify-self: center;
 }
 
-.waste-container {
+#waste {
     grid-column: 5 / 7;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    /* grid-template-columns: repeat(2, 1fr); */
 }
 
 #waste-anchor {
@@ -76,13 +78,13 @@ body {
     justify-content: flex-end;
 }
 
-#waste-extend .card {
+#waste .card {
     position: relative;
-    margin-left: -20px;
+
 }
 
-#waste-extend .card:not(:first-child) {
-    margin-left: -100px;
+#waste .card:not(:first-child) {
+    margin-right: -30px;
 }
 
 

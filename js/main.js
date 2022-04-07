@@ -20,14 +20,11 @@ const foundationEls = [...document.querySelectorAll('#foundation > div')];
 const newDeal = document.querySelector('#new-deal');
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
-const wasteContainer = document.querySelector('.waste-container');
-const wasteAnchor = wasteContainer.querySelector('#waste-anchor');
-const wasteExtend = wasteContainer.querySelector('#waste-extend');
+const wasteEl = document.querySelector('#waste');
 
 /*----- event listeners -----*/
 solitaireBoard.addEventListener('click', handleClick);
 newDeal.addEventListener('click', init);
-
 
 
 /*----- functions -----*/
@@ -77,11 +74,11 @@ function renderTableau() {
 }
 
 function renderWaste() {
-    wasteContainer.childNodes.forEach((node) => node.innerHTML = '');
+    wasteEl.innerHTML = '';
     waste.cards.slice(-3).forEach((card, idx) => {
         let cardEl = document.createElement('div');
         cardEl.setAttribute('class', card.faceup ? `card ${card.suit}${card.shorthand} shadow` : `card back-blue shadow`);
-        idx === 0 ? wasteAnchor.append(cardEl) : wasteExtend.append(cardEl);
+        wasteEl.append(cardEl);
     });
 }
 
