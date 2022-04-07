@@ -11,7 +11,7 @@ class Foundation {
     addCardToFoundation(card) {
         this[card.suit].addCardToPile(card);
     }
-    isPlaceable(card) {
+    isPlaceableFoundation(card) {
         console.log(this[card.suit]);
         console.log(card.suit);
         return this[card.suit].cards.length === 0 ? card.value === 1 : card.value === this[card.suit].cards.slice(-1)[0].value + 1;
