@@ -15,7 +15,7 @@ class Tableau {
         return cardTwo === undefined || cardOne.isRed() !== cardTwo.isRed();
     }
     cardIsLessThan(cardOne, cardTwo) {
-        return cardOne.value === 13 && !cardTwo || cardOne.value === cardTwo.value -1;
+        return cardOne.value === 13 && !cardTwo || cardOne.value === cardTwo.value - 1;
     }
     isPlaceableTableau(card) {
         let key;
@@ -24,7 +24,6 @@ class Tableau {
             if (this[tKey].cards.length === 0 && card.rank !== 'king') return;
             else if (this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) key = tKey;
         });
-        console.log(`Key: ${key}`);
         return key;
     }
 }
