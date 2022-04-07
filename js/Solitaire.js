@@ -21,17 +21,29 @@ class Solitaire {
             this.waste.addCardToPile(card);
         });
     }
-    checkLegalMove(section, cardPos, key) {
+    checkLegalMove(section, key, cardPos) {
+        let isPlaceableFoundation, isPlaceableTableau;
         if (section === 'tableau') {
-            if (this.foundation.isPlaceableFoundation(this[section][key].cards.slice(-1)[0])) this.foundation.addCardToFoundation(this[section][key].grabTopCard());
-            else if (this.tableau.isPlaceableTableau(this[section][key].cards[cardPos])) console.log('Placeable');
+            isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section][key].cards.slice(cardPos)[0]);
+            isPlaceableTableau = this.tableau.isPlaceableTableau(this[section][key].cards[cardPos]);
+            if (isPlaceableFoundation) {
+                this.foundation.addCardToFoundation(this[section][key].grabTopCard());
+                if (this.tableau[key].cards.length !== 0) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
+            }
+            else if (isPlaceableTableau) {
+                this.tableau[isPlaceableTableau].addCardsToPile(this[section][key].grabCardsFromPosition(cardPos));
+                if (this.tableau[key].cards.length !== 0) this.tableau[key].cards[this.tableau[key].cards.length - 1].flip();
+            }
             else console.log('Not placeable');
         } else if (section === 'waste') {
-            if (this.foundation.isPlaceableFoundation(this[section].cards.slice(-1)[0])) this.foundation.addCardToFoundation(this[section].grabTopCard());
-            else if (this.tableau.isPlaceableTableau(this[section].cards[cardPos])) console.log('Placeable');
+            isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section].cards.slice(-1)[0]);
+            isPlaceableTableau = this.tableau.isPlaceableTableau(this[section].cards.slice(-1)[0]);
+            if (isPlaceableFoundation) this.foundation.addCardToFoundation(this[section].grabTopCard());
+            else if (isPlaceableTableau) this.tableau[isPlaceableTableau].addCardsToPile(this[section].grabTopCard());
             else console.log('Not placeable');
         } else if (section === 'foundation') {
-            if (this.tableau.isPlaceableTableau(this[section][key].cards[cardPos])) console.log('Placeable');
+            isPlaceableTableau = this.tableau.isPlaceableTableau(this[section][key].cards[cardPos]);
+            if (isPlaceableTableau) console.log('Placeable');
             else console.log('Not placeable');
         }
     }
