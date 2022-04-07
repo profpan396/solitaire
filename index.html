@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,43 +11,46 @@
     <script defer src="./js/CardPile.js"></script>
     <script defer src="./js/Deck.js"></script>
     <script defer src="./js/TableauPile.js"></script>
-    <script defer src="./js/Waste.js"></script>
     <script defer src="./js/Foundation.js"></script>
     <script defer src="./js/Tableau.js"></script>
     <script defer src="./js/Solitaire.js"></script>
     <script defer src="./js/main.js"></script>
     <title>Solitaire</title>
 </head>
+
 <body>
-    <main id="solitaire-board">
+    <main id="solitaire">
         <header id="status-bar">
             <p>Undo</p>
             <p>Moves: 10</p>
             <p>00:01:50</p>
             <p>New Deal</p>
         </header>
-        <section class="top-row">
-            <section id="foundation">
-                <div id="h" class="card outline"></div>
-                <div id="d" class="card outline"></div>
-                <div id="s" class="card outline"></div>
-                <div id="c" class="card outline"></div>
+        <div id="solitaire-board">
+            <section class="top-row">
+                <section id="foundation">
+                    <div id="h" class="card outline"></div>
+                    <div id="d" class="card outline"></div>
+                    <div id="s" class="card outline"></div>
+                    <div id="c" class="card outline"></div>
+                </section>
+                <section class="waste-container">
+                    <section id="waste-extend"></section>
+                    <section id="waste-anchor"></section>
+                </section>
+                <section id="hand" class="card outline"></section>
             </section>
-            <section class="waste-container">
-                <section id="waste-extend"></section>
-                <section id="waste-anchor"></section>
+            <section id="tableau">
+                <div id="0" class="column"></div>
+                <div id="1" class="column"></div>
+                <div id="2" class="column"></div>
+                <div id="3" class="column"></div>
+                <div id="4" class="column"></div>
+                <div id="5" class="column"></div>
+                <div id="6" class="column"></div>
             </section>
-            <section id="hand" class="card outline"></section>
-        </section>
-        <section id="tableau">
-            <div id="0" class="column"></div>
-            <div id="1" class="column"></div>
-            <div id="2" class="column"></div>
-            <div id="3" class="column"></div>
-            <div id="4" class="column"></div>
-            <div id="5" class="column"></div>
-            <div id="6" class="column"></div>
-        </section>
+        </div>
     </main>
 </body>
+
 </html>
