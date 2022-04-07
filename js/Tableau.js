@@ -18,12 +18,13 @@ class Tableau {
         return cardOne.value === 13 && !cardTwo || cardOne.value === cardTwo.value -1;
     }
     isPlaceableTableau(card) {
-        let isPlaceable = false;
+        let key;
         Object.keys(this).forEach((tKey) => {
             let cardTwo = this[tKey].cards.slice(-1)[0];
             if (this[tKey].cards.length === 0 && card.rank !== 'king') return;
-            else if (this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) isPlaceable = true;
+            else if (this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) key = tKey;
         });
-        return isPlaceable;
+        console.log(`Key: ${key}`);
+        return key;
     }
 }
