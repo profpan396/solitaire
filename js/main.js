@@ -17,15 +17,17 @@ let solitaire, deck, waste, foundation, tableau, moves, gameWon;
 /*----- cached element references -----*/
 const solitaireBoard = document.querySelector('#solitaire-board');
 const foundationEls = [...document.querySelectorAll('#foundation > div')];
+const newDeal = document.querySelector('#new-deal');
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
 const wasteContainer = document.querySelector('.waste-container');
 const wasteAnchor = wasteContainer.querySelector('#waste-anchor');
 const wasteExtend = wasteContainer.querySelector('#waste-extend');
-console.log(solitaireBoard);
-console.log(tableauColumns);
+
 /*----- event listeners -----*/
 solitaireBoard.addEventListener('click', handleClick);
+newDeal.addEventListener('click', init);
+
 
 
 /*----- functions -----*/
