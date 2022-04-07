@@ -98,4 +98,11 @@ function handleClick(evt) {
     if (!evt.target.classList.contains('card')) return;
     console.log(evt.target);
     console.log(evt.target.parentElement);
+
+    if (evt.target.parentElement.classList.contains('column')) {
+        let column = evt.target.parentElement.id;
+        let idx = [...evt.target.parentElement.children].indexOf(evt.target);
+        solitaire.moveCard('tableau', column, idx);
+    }
+    render();
 }
