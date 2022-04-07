@@ -9,7 +9,7 @@ class Solitaire {
     resetHand() { //Modify code to be a more succinct
         this.waste.cards.reverse();
         this.waste.cards.forEach((card) => {
-            if(card.faceup) card.flip();
+            if (card.faceup) card.flip();
             this.hand.addCardToPile(card);
         });
         this.waste.cards = [];
@@ -21,14 +21,18 @@ class Solitaire {
             this.waste.addCardToPile(card);
         });
     }
-    checkLegalMove(card) {
-        console.log(Object.keys(this.tableau));
-        console.log(Object.keys(this.foundation));
-        Object.keys(this.foundation).forEach((fKey) => {
-            console.log(this.foundation[fKey]);
-        });
-        Object.keys(this.tableau).forEach((tKey) => {
-            console.log(this.tableau[tKey]);
-        });
+    checkLegalMove(section, cardPos, key) {
+        if (section === 'tableau') {
+            if (this.foundation.isPlaceableFoundation(this[section][key].cards.slice(-1)[0])) this.foundation.addCardToFoundation(this[section][key].grabTopCard());
+            else if (this.tableau.isPlaceableTableau(this[section][key].cards[cardPos])) console.log('Placeable');
+            else console.log('Not placeable');
+        } else if (section === 'waste') {
+            if (this.foundation.isPlaceableFoundation(this[section].cards.slice(-1)[0])) this.foundation.addCardToFoundation(this[section].grabTopCard());
+            else if (this.tableau.isPlaceableTableau(this[section].cards[cardPos])) console.log('Placeable');
+            else console.log('Not placeable');
+        } else if (section === 'foundation') {
+            if (this.tableau.isPlaceableTableau(this[section][key].cards[cardPos])) console.log('Placeable');
+            else console.log('Not placeable');
+        }
     }
 }
