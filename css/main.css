@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#foundation .card.outline, #tableau .back-blue{
+#foundation .outline, #tableau .back-blue{
     pointer-events: none;
 }
 
