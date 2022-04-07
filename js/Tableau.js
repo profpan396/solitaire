@@ -12,16 +12,17 @@ class Tableau {
         });
     }
     cardIsOpposite(cardOne, cardTwo) {
-        return cardOne.isRed() !== cardTwo.isRed();
+        return cardTwo === undefined || cardOne.isRed() !== cardTwo.isRed();
     }
     cardIsLessThan(cardOne, cardTwo) {
-        return cardOne.value === cardTwo.value -1;
+        return cardOne.value === 13 && !cardTwo || cardOne.value === cardTwo.value -1;
     }
     isPlaceableTableau(card) {
         let isPlaceable = false;
         Object.keys(this).forEach((tKey) => {
             let cardTwo = this[tKey].cards.slice(-1)[0];
-            if ((this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) === true) isPlaceable = true;
+            if (this[tKey].cards.length === 0 && card.rank !== 'king') return;
+            else if (this.cardIsOpposite(card, cardTwo) && this.cardIsLessThan(card, cardTwo)) isPlaceable = true;
         });
         return isPlaceable;
     }
