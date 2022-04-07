@@ -7,7 +7,7 @@ class Card {
         this.faceup = false;
     }
     flip() {
-       this.faceup = !this.faceup;
+        this.faceup = !this.faceup;
     }
     isRed() {
         return this.suit === 'h' || this.suit === 'd';
