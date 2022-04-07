@@ -4,7 +4,7 @@ class Solitaire {
         this.waste = waste;
         this.foundation = foundation;
         this.tableau = tableau;
-        this.cardsToDraw = -3;
+        this.cardsToDraw = -1;
     }
     resetHand() { //Modify code to be a more succinct
         this.waste.cards.reverse();
