@@ -1,7 +1,7 @@
 // import CardPile from './CardPile.js';
 
 class TableauPile extends CardPile {
-    constructor(){
+    constructor() {
         super();
     }
     grabCardsFromPosition(n) {
