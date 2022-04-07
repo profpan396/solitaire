@@ -15,15 +15,17 @@ let solitaire, deck, waste, foundation, tableau, moves, gameWon;
 
 
 /*----- cached element references -----*/
+const solitaireBoard = document.querySelector('#solitaire-board');
 const foundationEls = [...document.querySelectorAll('#foundation > div')];
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
 const wasteContainer = document.querySelector('.waste-container');
 const wasteAnchor = wasteContainer.querySelector('#waste-anchor');
 const wasteExtend = wasteContainer.querySelector('#waste-extend');
+console.log(solitaireBoard);
 console.log(tableauColumns);
 /*----- event listeners -----*/
-
+solitaireBoard.addEventListener('click', handleClick);
 
 
 /*----- functions -----*/
@@ -83,10 +85,17 @@ function renderWaste() {
 
 function renderFoundation() {
     foundationEls.forEach((pile) => {
+            pile.innerHTML = '';
             let card = foundation[pile.id].cards.slice(-1)[0];
             if (!card) return;
             let cardEl = document.createElement('div');
             cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} shadow`);
             pile.append(cardEl);
     });
+}
+
+function handleClick(evt) {
+    if (!evt.target.classList.contains('card')) return;
+    console.log(evt.target);
+    console.log(evt.target.parentElement);
 }
