@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-#foundation .outline, #tableau .back-blue{
+#tableau .back-blue{
     pointer-events: none;
 }
 
@@ -62,20 +62,8 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
-    /* grid-template-columns: repeat(2, 1fr); */
-}
-
-#waste-anchor {
-    grid-column: 2 / 3;
-    display: flex;
-    justify-content: center;
-}
-
-#waste-extend {
-    grid-column: 1 / 2;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-end;
+    flex-shrink: 0;
+    padding: 0 10%;
 }
 
 #waste .card {
@@ -124,7 +112,7 @@ body {
     left: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
     #solitaire {
         width: 100%;
     }
