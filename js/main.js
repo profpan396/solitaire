@@ -94,7 +94,7 @@ function renderFoundation() {
 }
 
 function handleClick(evt) {
-    if (!evt.target.classList.contains('card')) return;
+    if (gameWon || !evt.target.classList.contains('card')) return;
     console.log(evt.target);
     console.log(evt.target.parentElement);
 
@@ -112,5 +112,11 @@ function handleClick(evt) {
         else solitaire.resetHand();
     }
     else if (evt.target.parentElement.id === 'waste') solitaire.moveCard('waste');
+    gameWon = checkGameWon();
+    console.log(`Foundation full? ${gameWon}`);
     render();
+}
+
+function checkGameWon() {
+    return Object.keys(solitaire.foundation).reduce((cardTotal, pile) => cardTotal += solitaire.foundation[pile].cards.length, 0) === 52;
 }
