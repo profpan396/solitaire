@@ -1,7 +1,7 @@
 /*----- constants -----*/
 
 /*----- app's state (variables) -----*/
-let solitaire, deck, waste, foundation, tableau, moves, gameWon;
+let solitaire, deck, waste, foundation, tableau, gameWon;
 
 /*----- cached element references -----*/
 const foundationEls = [...document.querySelectorAll('#foundation > div')];
