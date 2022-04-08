@@ -24,7 +24,7 @@ class Solitaire {
     moveCard(section, key, cardPos) {
         let isPlaceableFoundation, isPlaceableTableau;
         if (section === 'tableau') {
-            isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section][key].cards.slice(cardPos)[0]);
+            if (this[section][key].cards.slice(cardPos).length === 1) isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section][key].cards.slice(cardPos)[0]);
             isPlaceableTableau = this.tableau.isPlaceableTableau(this[section][key].cards[cardPos]);
             if (isPlaceableFoundation) {
                 this.foundation.addCardToFoundation(this[section][key].grabTopCard());
