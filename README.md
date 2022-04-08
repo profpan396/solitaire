@@ -2,8 +2,8 @@
 <div align="center">
     <img src="./images/game.png">
     <h1>Solitaire</h1>
-    <h2><a href="https://toastito.github.io/solitaire/" target="_blank">Play</a></h2>
-    <h2>Roger Davila</h2>
+    <h3><a href="https://toastito.github.io/solitaire/" target="_blank">Play</a></h3>
+    <h3>Roger Davila</h3>
         <a href="https://www.linkedin.com/in/roger-davila/" target="_blank">
       <img src="https://img.shields.io/badge/-linkedin.com/in/rogerdavila-blue?style=flat&``logo=Linkedin&logoColor=white">
     </a> 
@@ -17,13 +17,13 @@ Solitaire is a single player with many variations. This flavor of solitaire is K
 
 # How to Play the Game
 There are four main section sections to the board.
-## 1. The Foundation
+### 1. The Foundation
 This where you cards are sorted. The foundation piles start with the ace. Your cards will be place here sequentially in the same suit. The game is won when all of your cards are in the foundation.
-## 2. The Tableau
+### 2. The Tableau
 In the tableau you can only place a card whose rank is one lower than that card is being place on top of and of an alternate color.
-## 3. The Hand
+### 3. The Hand
 This is where you will draw from to get more cards to make more moves. This version of the game deals 1 card at a time from the hand. The drawn cards goes into the waste pile. Once the hand is empty turn the waste pile over and at it to the hand.
-## 4. The Waste
+### 4. The Waste
 The waste is where your drawn cards go. Turn over the card you pull from the hand and stack them on top of each other. You can only access the top most card on the waste.
 
 <details>
