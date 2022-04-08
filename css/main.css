@@ -13,7 +13,8 @@ body {
     justify-content: center;
     align-items: center;
 }
-#tableau .back-blue{
+
+#tableau .back-blue {
     pointer-events: none;
 }
 
@@ -32,8 +33,8 @@ body {
 }
 
 .card {
-    width: 120px;
-    height: 170px;
+    width: 108px;
+    height: 153px;
 }
 
 #status-bar {
@@ -42,7 +43,7 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-#status-bar #new-deal{
+#status-bar #new-deal {
     cursor: pointer;
 }
 
@@ -77,13 +78,12 @@ body {
 }
 
 #waste .card:not(:first-child) {
-    margin-right: -30px;
+    margin-right: -40px;
 }
 
 #waste .card:not(:last-child) {
     pointer-events: none;
 }
-
 
 #hand {
     grid-column: 7 / 8;
@@ -117,7 +117,22 @@ body {
     left: 0;
 }
 
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1360px) and (min-width: 920px) {
+    #solitaire {
+        width: 100%;
+    }
+
+    .card {
+        width: 96px;
+        height: 136px;
+    }
+
+    #tableau .column .card:not(:first-child) {
+        margin-top: -100px;
+    }
+}
+
+@media screen and (max-width: 920px) {
     #solitaire {
         width: 100%;
     }
