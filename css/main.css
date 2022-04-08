@@ -39,7 +39,8 @@ body {
 
 #status-bar {
     display: flex;
-    justify-content: space-evenly;
+    padding: 0 3%;
+    justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -107,6 +108,11 @@ body {
     position: relative;
 }
 
+#win-message {
+    margin-top: 4rem;
+    text-align: center;
+}
+
 #tableau .column .card:not(:first-child) {
     margin-top: -120px;
 }
@@ -140,6 +146,10 @@ body {
     .card {
         width: 48px;
         height: 68px;
+    }
+
+    #waste .card:not(:first-child) {
+        margin-right: -30px;
     }
 
     #tableau .column .card:not(:first-child) {

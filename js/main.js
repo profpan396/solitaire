@@ -15,16 +15,16 @@ let solitaire, deck, waste, foundation, tableau, moves, gameWon;
 
 
 /*----- cached element references -----*/
-const solitaireBoard = document.querySelector('#solitaire-board');
 const foundationEls = [...document.querySelectorAll('#foundation > div')];
-const newDeal = document.querySelector('#new-deal');
 const tableauColumns = [...document.querySelectorAll('.column')];
 const handEl = document.querySelector('#hand');
 const wasteEl = document.querySelector('#waste');
+const winEl = document.querySelector('#win-message');
 
 /*----- event listeners -----*/
-solitaireBoard.addEventListener('click', handleClick);
-newDeal.addEventListener('click', init);
+// window.addEventListener('load', openModal);
+document.querySelector('#solitaire-board').addEventListener('click', handleClick);
+document.querySelector('#new-deal').addEventListener('click', init);
 
 
 /*----- functions -----*/
@@ -51,6 +51,7 @@ function render() {
     renderTableau();
     renderWaste();
     renderFoundation();
+    renderWinMessage();
 }
 
 function renderDeck() {
@@ -95,8 +96,6 @@ function renderFoundation() {
 
 function handleClick(evt) {
     if (gameWon || !evt.target.classList.contains('card')) return;
-    console.log(evt.target);
-    console.log(evt.target.parentElement);
 
     if (evt.target.parentElement.classList.contains('column')) {
         let column = evt.target.parentElement.id;
@@ -112,11 +111,16 @@ function handleClick(evt) {
         else solitaire.resetHand();
     }
     else if (evt.target.parentElement.id === 'waste') solitaire.moveCard('waste');
+    
     gameWon = checkGameWon();
-    console.log(`Foundation full? ${gameWon}`);
     render();
 }
 
 function checkGameWon() {
     return Object.keys(solitaire.foundation).reduce((cardTotal, pile) => cardTotal += solitaire.foundation[pile].cards.length, 0) === 52;
+}
+
+function renderWinMessage() {
+    winEl.innerText = '';
+    if (gameWon) winEl.innerText = 'You Won!'
 }
