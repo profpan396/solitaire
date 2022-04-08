@@ -84,12 +84,12 @@ function renderWaste() {
 
 function renderFoundation() {
     foundationEls.forEach((pile) => {
-            pile.innerHTML = '';
-            let card = foundation[pile.id].cards.slice(-1)[0];
-            if (!card) return;
-            let cardEl = document.createElement('div');
-            cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} shadow`);
-            pile.append(cardEl);
+        pile.innerHTML = '';
+        let card = foundation[pile.id].cards.slice(-1)[0];
+        if (!card) return;
+        let cardEl = document.createElement('div');
+        cardEl.setAttribute('class', `card ${card.suit}${card.shorthand} shadow`);
+        pile.append(cardEl);
     });
 }
 
