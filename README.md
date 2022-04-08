@@ -17,17 +17,22 @@ Solitaire is a single player with many variations. This flavor of solitaire is K
 
 # How to Play the Game
 There are four main section sections to the board.
-1. The Foundation
-2. The Tableau
-3. The Hand
-4. The Waste
+## 1. The Foundation
+This where you cards are sorted. The foundation piles start with the ace. Your cards will be place here sequentially in the same suit. The game is won when all of your cards are in the foundation.
+## 2. The Tableau
+In the tableau you can only place a card whose rank is one lower than that card is being place on top of and of an alternate color.
+## 3. The Hand
+This is where you will draw from to get more cards to make more moves. This version of the game deals 1 card at a time from the hand. The drawn cards goes into the waste pile. Once the hand is empty turn the waste pile over and at it to the hand.
+## 4. The Waste
+The waste is where your drawn cards go. Turn over the card you pull from the hand and stack them on top of each other. You can only access the top most card on the waste.
 
-- In the tableau you can only place a card whose rank is one lower than that card is being place on top of and of an alternate color.
-- A stack of cards can be moved if all the cards from the selected position and below follow the rules above.
+<details>
+<summary> :art: Wireframes</summary>
 
-# Screenshot
-
-<img src="./planning/wireframe_mobile.png" height='600px'>
+| Description | Screenshot |
+|------------ | ------------|
+| <h3 align="center">Solitaire Board</h3> | <img src="./planning/wireframe_mobile.png" height="400px"> |
+</details>
 
 ## :computer: Technologies Used
 ![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript) 
@@ -42,7 +47,10 @@ There are four main section sections to the board.
 
 [Click to Play Solitaire!](https://toastito.github.io/solitaire/)
 
-# Next Steps
-
-- Future enhancement one...
-- Future enhancement two...
+## :fast_forward: Next Steps 
+### Upcoming Features
+- [ ] 3 Card Deal
+- [ ] Game Duration Timer
+- [ ] Undo Move
+- [ ] Sound Effects
+- [ ] Animations
