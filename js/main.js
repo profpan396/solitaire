@@ -103,6 +103,10 @@ function handleClick(evt) {
         let idx = [...evt.target.parentElement.children].indexOf(evt.target);
         solitaire.moveCard('tableau', column, idx);
     }
+    else if (evt.target.parentElement.parentElement.id === 'foundation') {
+        let key = evt.target.parentElement.id;
+        solitaire.moveCard('foundation', key);
+    }
     else if (evt.target.parentElement.id === 'hand' || evt.target.id === 'hand') {
         if (solitaire.hand.cards.length > 0) solitaire.pullFromHand();
         else solitaire.resetHand();
