@@ -19,9 +19,7 @@ document.querySelector('#new-deal').addEventListener('click', init);
 init();
 
 function init() {
-    moves = 0;
     gameWon = false;
-
     //Create solitaire sections
     deck = new Deck();
     deck.shuffle();
