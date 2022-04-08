@@ -1,18 +1,7 @@
-// import CardPile from './CardPile.js';
-// import TableauPile from './TableauPile.js';
-// import Deck from './Deck.js';
-// import Tableau from './Tableau.js';
-// import Foundation from './Foundation.js';
-// import Solitaire from './Solitaire.js';
-
 /*----- constants -----*/
-
-
 
 /*----- app's state (variables) -----*/
 let solitaire, deck, waste, foundation, tableau, moves, gameWon;
-
-
 
 /*----- cached element references -----*/
 const foundationEls = [...document.querySelectorAll('#foundation > div')];
@@ -26,7 +15,6 @@ const winEl = document.querySelector('#win-message');
 document.querySelector('#solitaire-board').addEventListener('click', handleClick);
 document.querySelector('#new-deal').addEventListener('click', init);
 
-
 /*----- functions -----*/
 init();
 
@@ -34,12 +22,12 @@ function init() {
     moves = 0;
     gameWon = false;
 
+    //Create solitaire sections
     deck = new Deck();
     deck.shuffle();
     waste = new CardPile();
     foundation = new Foundation(...Array(4).fill(null).map(_ => new CardPile()));
     tableau = new Tableau(...Array(7).fill(null).map(_ => new TableauPile()));
-
     solitaire = new Solitaire(deck, waste, foundation, tableau);
     tableau.setTableau(solitaire.hand); // Use the hand pile to distribute card to the tableau
 
@@ -111,7 +99,7 @@ function handleClick(evt) {
         else solitaire.resetHand();
     }
     else if (evt.target.parentElement.id === 'waste') solitaire.moveCard('waste');
-    
+
     gameWon = checkGameWon();
     render();
 }

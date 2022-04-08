@@ -23,6 +23,7 @@ class Solitaire {
     moveCard(section, key, cardPos) {
         let isPlaceableFoundation, isPlaceableTableau;
         if (section === 'tableau') {
+            //Check if card location clicked has any cards below. If it does, it does not check the foundation
             if (this[section][key].cards.slice(cardPos).length === 1) isPlaceableFoundation = this.foundation.isPlaceableFoundation(this[section][key].cards.slice(cardPos)[0]);
             isPlaceableTableau = this.tableau.isPlaceableTableau(this[section][key].cards[cardPos]);
             if (isPlaceableFoundation) {

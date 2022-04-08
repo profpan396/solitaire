@@ -1,6 +1,3 @@
-// import Card from './Card.js';
-// import CardPile from './CardPile.js';
-
 class Deck extends CardPile {
     constructor() {
         super();
