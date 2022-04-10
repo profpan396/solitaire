@@ -13,25 +13,25 @@
 </div>
 
 # About the Game
-Solitaire is a single player with many variations. This flavor of solitaire is Klondike, where the goal is to arrange the cards into four piles from Ace to King using a standard 52 card deck of playing cards.
+Solitaire is a single player game with many variations. This flavor of solitaire is Klondike, where the goal is to arrange the cards into four piles from Ace to King using a standard 52 card deck of playing cards.
 
 # How to Play the Game
 There are four main section sections to the board.
 ### 1. The Foundation
-This where you cards are sorted. The foundation piles start with the ace. Your cards will be place here sequentially in the same suit. The game is won when all of your cards are in the foundation.
+This where your cards are sorted. The Foundation piles are initially empty and are stacked starting with the ace and are built up one card at a time up to king within the same suit. The game is won when all of your cards are in the Foundation.
 ### 2. The Tableau
-In the tableau you can only place a card whose rank is one lower than that card is being place on top of and of an alternate color.
+In the Tableau, you can only place a card whose rank is one lower and of an alternate color than the card that it will be placed on top of. You may also move a stack from the Tableau using the card selected as the reference, moving it with all of the cards below it to the new position.
 ### 3. The Hand
-This is where you will draw from to get more cards to make more moves. This version of the game deals 1 card at a time from the hand. The drawn cards goes into the waste pile. Once the hand is empty turn the waste pile over and at it to the hand.
+This is where you will draw from to get more cards to make more moves. This version of the game deals 1 card at a time from the Hand (deck) when you click it. The drawn cards are placed into the Waste pile in the order they were drawn. Once the hand is empty turn the waste pile over and at it to the hand.
 ### 4. The Waste
-The waste is where your drawn cards go. Turn over the card you pull from the hand and stack them on top of each other. You can only access the top most card on the waste.
+The Waste is where your drawn cards go. Turn over the card(s) you pull from the Hand and stack them on top of each other faceup. You can only access the top most card on the waste, but can see the 3 most recent cards drawn.
 
 <details>
 <summary> :art: Wireframes</summary>
-
-| Description | Screenshot |
+I Used figma to quickly sketch up a wireframe for the application. Focused on making it playable on mobile devices first as I imagined this being a more enjoyable and likely use case.
+| Landing Page | Wireframe |
 |------------ | ------------|
-| <h3 align="center">Solitaire Board</h3> | <img src="./planning/wireframe_mobile.png" height="400px"> |
+| <h3 align="center">General Look - iPhone 11 Pro Reference</h3> | <img src="./planning/wireframe_mobile.png" height="400px"> |
 </details>
 
 ## :computer: Technologies Used
@@ -42,6 +42,7 @@ The waste is where your drawn cards go. Turn over the card you pull from the han
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
 ![Markdown](https://img.shields.io/badge/-Markdown-333?style=flat&logo=markdown)
+![Figma](https://img.shields.io/badge/Figma-333?style=flat&logo=figma)
 
 # Getting Started
 
@@ -51,6 +52,8 @@ The waste is where your drawn cards go. Turn over the card you pull from the han
 ### Upcoming Features
 - [ ] 3 Card Deal
 - [ ] Game Duration Timer
+- [ ] Re-Deal Starting Board
 - [ ] Undo Move
-- [ ] Sound Effects
+- [ ] Card Sound Effects
 - [ ] Animations
+- [ ] Drag Card Function
