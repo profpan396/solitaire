@@ -33,7 +33,7 @@ I Used figma to quickly sketch up a wireframe for the application. Focused on ma
 
 | Landing Page | Wireframe |
 |------------ | ------------|
-| <h3 align="center">General Look - iPhone 11 Pro Reference</h3> | <img src="./planning/wireframe_mobile.png" height="400px"> |
+| <p align="center">Landing Page - iPhone 11 Pro Reference</p> | <img src="./planning/wireframe_mobile.png" height="500px"> |
 </details>
 
 ## :computer: Technologies Used
