@@ -48,7 +48,7 @@ I Used figma to quickly sketch up a wireframe for the application. Focused on ma
 
 # Getting Started
 
-[Click to Play Solitaire!](https://toastito.github.io/solitaire/)
+[Click to Play Solitaire!](https://roger-davila.github.io/solitaire/)
 
 ## :fast_forward: Next Steps 
 ### Upcoming Features
