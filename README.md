@@ -2,7 +2,7 @@
 <div align="center">
     <img src="./images/game.png">
     <h1>Solitaire</h1>
-    <h3><a href="https://toastito.github.io/solitaire/" target="_blank">Play</a></h3>
+    <h3><a href="https://roger-davila.github.io/solitaire/" target="_blank">Play</a></h3>
     <h3>Roger Davila</h3>
         <a href="https://www.linkedin.com/in/roger-davila/" target="_blank">
       <img src="https://img.shields.io/badge/-linkedin.com/in/rogerdavila-blue?style=flat&``logo=Linkedin&logoColor=white">
